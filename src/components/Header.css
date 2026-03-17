@@ -1,0 +1,55 @@
+.vortex-header{
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    background-color:#1B3A6B;
+    border-bottom: 1px solid #9197b3;
+}
+.user-info h3{
+    font-size: 1.1rem;
+    color: white;
+}
+.user-info p{
+    font-size: 0.75rem;
+    color: rgb(254, 254, 254);
+}
+.destaque{
+    color: rgb(68, 136, 231);
+}
+
+.badge{
+    background-color: rgba(124, 58, 237, 0.1);
+    color: yellow;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid yellowgreen;
+    font-size:11px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+
+}
+
+.notificacoes{
+    background: transparent;
+    color: rgb(217, 255, 0);
+    border: none;
+    cursor:pointer;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.notificacoes:hover{
+    color: rgb(161, 209, 3);
+}
+
+.header-actions{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
