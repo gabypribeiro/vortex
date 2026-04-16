@@ -14,7 +14,7 @@ export const gamesData = [
     {id: 4, title: "Sally Face", category: "Indie", banner: sal},
     {id: 5, title: "Moy", category: "Virtual Pet", banner: moy},
     {id: 6, title: "Papa's Cupcakeria", category: "Simulação ", banner: papas},
-    {id: 7, title: "Moranguinho Shake", category: "cooking game ", banner: moranguinho},
-    {id: 8, title: "BTS World", category: "história interativa", banner: bts},
+    {id: 7, title: "Moranguinho Shake", category: "Cooking game ", banner: moranguinho},
+    {id: 8, title: "BTS World", category: "História interativa", banner: bts},
    
 ]

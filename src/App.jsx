@@ -1,26 +1,67 @@
+import { useState, useEffect } from "react"; 
 import { Sidebar } from "./components/Sidebar";
 import { Header } from "./components/Header";
-import "./App.css";
 import {gamesData} from "./data/Games";
 import { GameCard } from "./components/GameCard";
+import AOS from 'aos';
+import "aos/dist/aos.css";
+import "./App.css";
+
 function App() {
-  return (
+  const [search, setSearch] =useState ('');
+  const [activeTab, setActiveTab] = useState("dash");
+
+  
+  const filteredGames = gamesData
+  .filter(() => activeTab === "dash")
+  .filter((game)=>game.title.toLowerCase().includes(search.toLowerCase()));
+
+
+   useEffect(()  => {
+      AOS.init({
+        duration: 1000,
+        once: false,
+        easing: "ease-in-out",
+
+      })
+   },[]);
+
+
+    return (
     <div className="vortex-app">
-      <Sidebar />
+      <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
 
       <main className="vortex-main">
-        <Header />
+
+        <Header search = {search} setSearch={setSearch} />
+
         <div className="vortex-content">
-          <h2 className="section-title">Jogos recentes</h2>
+
+          <h2 className="section-title">
+
+            {activeTab === "dash" && "Dashboard"}
+            {activeTab === "favorites" && "Favoritos"}
+            {activeTab === "profile" && "Perfil"}
+          </h2>
+
           <div className="vortex-grid">
-            {
-              gamesData.map((g)=> (<GameCard
+       
+         {filteredGames.length > 0 ? (
+          filteredGames.map((g,index) => (
+            <GameCard
                 key={g.id}
                 title = {g.title}
                 category={g.category}
                 banner={g.banner}
-              />))
-            }
+                index ={index}
+              />
+          ))
+         ): (
+         <p style={{color:"#94a3b8"}}> Nenhum jogo encontrado...</p>
+
+         )} 
+
+
           </div>
         </div>
       </main>
