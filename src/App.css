@@ -1,5 +1,6 @@
 .vortex-app{
   display: flex;
+  background-color: black;
   min-height: 100vh;
 }
 .vortex-main{
